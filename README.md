@@ -23,6 +23,9 @@ You need to have Python 3.x installed on your system to run this application. Py
 
 You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
 
+### Important!!
+Configure your IDE to use the interpreter from the environment **where pandas is installed**. This is usually done in the settings or configuration section of the IDE.
+
 ### Simple Execution
 download "best-selling-books.csv" and main.py file
 execute the script and follow the prompt:
