@@ -51,7 +51,7 @@ Ensure you have downloaded and saved both `best-selling-books.csv` and `main.py`
 
 ### Initial Setup
 
-- **Start the Application:** Run `main.py` in your terminal or command prompt. You will be prompted to log in using a username and password.
+- **Start the Application:** Run `main.py` in your terminal, IDEs, or command prompt. You will be prompted to log in using a username and password.
 
 ### Authentication Details
 
