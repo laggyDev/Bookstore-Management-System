@@ -42,14 +42,13 @@ Activate the conda environment and use conda to install pandas:
 
 
 ## Simple Execution
-download file:
+download both file:
+**Ensure to save both files under the same folder**
 
     best-selling-books.csv
     main.py
     
-**Ensure to save both files under the same folder**
-
-execute the script and follow the prompt:
+### Run the application and you will be prompted to enter username and password
 
 For test authentications, each username and password are as follows
 
