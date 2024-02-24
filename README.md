@@ -45,6 +45,7 @@ Activate the conda environment and use conda to install pandas:
 ## 4. Simple Execution
 
 download both file:
+
 **Ensure to save both files under the same folder**
 
     best-selling-books.csv
