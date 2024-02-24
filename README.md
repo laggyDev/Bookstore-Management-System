@@ -23,8 +23,23 @@ You need to have Python 3.x installed on your system to run this application. Py
 
 You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
 
-### Important!!
-Configure your IDE to use the interpreter from the environment **where pandas is installed**. This is usually done in the settings or configuration section of the IDE.
+## 1. Verify Current Interpreter
+
+First, ensure you know which Python interpreter you're using when the error occurs. In IDEs like PyCharm, VSCode, or Jupyter notebooks, the interpreter or kernel can usually be selected or changed from the interface. Check the interpreter path to confirm whether it points to the expected environment where pandas is installed.
+
+## 2. Ensure Pandas is Installed in the Active Environment
+For standard environments (venv/virtualenv):
+Activate the environment and use pip to install pandas:
+
+    source /path/to/env/bin/activate  # On Windows, use `\path\to\env\Scripts\activate`
+    pip install pandas
+    
+For Anaconda environments:
+Activate the conda environment and use conda to install pandas:
+
+    conda activate myenv
+    conda install pandas
+
 
 ### Simple Execution
 download "best-selling-books.csv" and main.py file
