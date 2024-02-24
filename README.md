@@ -22,7 +22,7 @@ Follow these instructions to get your Book Management System up and running.
 You need to have Python 3.x installed on your system to run this application. Python can be downloaded from the [official website](https://www.python.org/downloads/).
 
 ### Simple Execution
-download "best-selling-books.csv" and .py file
+download "best-selling-books.csv" and main.py file
 execute the script and follow the prompt:
 
 For test authentications, each username and password are as follows
