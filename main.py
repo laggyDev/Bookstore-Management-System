@@ -1,9 +1,14 @@
-import pandas as pd
+try:
+    import pandas as pd
+except ImportError:
+    raise ImportError("This script requires the pandas library. Install it using 'pip install pandas'")
+
 from datetime import datetime
 
-# Define classes
+# Define the Book class to represent individual books with relevant attributes.
 class Book:
     def __init__(self, title, authors, original_language, first_published, sales_millions, genre, shelves, number_of_books, price):
+        # Initialize the book object with title, authors, and other attributes.
         self.title = title
         self.authors = authors
         self.original_language = original_language
@@ -14,6 +19,7 @@ class Book:
         self.number_of_books = number_of_books
         self.price = price
 
+    # Representation method to print book details in a readable format.
     def __repr__(self):
         return (f"Title: '{self.title}'\n"
                 f"Authors: {self.authors}\n"
@@ -25,12 +31,15 @@ class Book:
                 f"Number of Books: {self.number_of_books}\n"
                 f"Price: {self.price}")
 
+# Define the Bookshelf class to manage a collection of books.
 class Bookshelf:
     def __init__(self):
-        self.books = []
+        self.books = []  # Initialize an empty list to hold book objects.
 
+    # Method to load books from a CSV file into the bookshelf.
     def load_from_csv(self, file_name):
-        df = pd.read_csv(file_name)
+        df = pd.read_csv(file_name)  # Read the CSV file into a DataFrame.
+        # Iterate through each row in the DataFrame and create Book objects.
         for _, row in df.iterrows():
             self.books.append(Book(row['Book'],
                                    row['Author(s)'],
@@ -42,19 +51,22 @@ class Bookshelf:
                                    row['Number of Books'],
                                    row['Price']))
 
+    # Method to find books by a fragment of their title.
     def find_book(self, title_fragment):
-        found_books = []
-        lower_title_fragment = title_fragment.lower()
+        found_books = []  # Initialize an empty list to hold found books.
+        lower_title_fragment = title_fragment.lower()  # Convert the search string to lowercase.
+        # Iterate through the books and add those that match the search string.
         for book in self.books:
             if lower_title_fragment in book.title.lower():
                 found_books.append(book)
-        
-        return found_books
+        return found_books  # Return the list of found books.
 
+    # Method to print details of all books in the bookshelf.
     def list_books(self):
         for book in self.books:
             print(book)
 
+    # Method to update the shelf location of a book.
     def update_shelf(self, title, new_shelf):
         for book in self.books:
             if book.title.lower() == title.lower():
@@ -64,20 +76,16 @@ class Bookshelf:
         print("Book not found.")
         return False
     
+    # Method to print a summary of the inventory, organized by shelf.
     def inventory_summary(self):
-        shelf_inventory = {}
+        shelf_inventory = {}  # Dictionary to store summary data by shelf.
         for book in self.books:
-            # Check if the shelf exists in the dictionary
             if book.shelves not in shelf_inventory:
                 shelf_inventory[book.shelves] = {'titles': [], 'total_price': 0, 'count': 0}
-            # Append the book title to the shelf's list
             shelf_inventory[book.shelves]['titles'].append(book.title)
-            # Update the total price for the shelf by multiplying the book's price by its number of copies
             shelf_inventory[book.shelves]['total_price'] += book.price * book.number_of_books
-            # Increment the count of books on the shelf
-            shelf_inventory[book.shelves]['count'] += book.number_of_books  # Adjusted to add the number of books, not just 1
-
-        # Print the summary for each shelf
+            shelf_inventory[book.shelves]['count'] += book.number_of_books
+        # Print the summary for each shelf.
         for shelf, info in shelf_inventory.items():
             print("\n------------------------------------------------------------")
             print(f"Shelf {shelf} summary:")
@@ -89,9 +97,10 @@ class Bookshelf:
                 print(f" - {title}")
             print("------------------------------------------------------------")
 
+    # Method to save the current state of the bookshelf to a CSV file.
     def save_to_csv(self, file_name):
-        import pandas as pd
-        data = []
+        data = []  # Initialize an empty list to hold book data dictionaries.
+        # Convert each book object into a dictionary and append to the list.
         for book in self.books:
             data.append({
                 'Book': book.title,
@@ -104,29 +113,33 @@ class Bookshelf:
                 'Number of Books': book.number_of_books,
                 'Price': book.price
             })
-        df = pd.DataFrame(data)
-        df.to_csv(file_name, index=False)
+        df = pd.DataFrame(data)  # Convert the list of dictionaries into a DataFrame.
+        df.to_csv(file_name, index=False)  # Write the DataFrame to a CSV file.
         print("Bookshelf saved to CSV.")
 
+# Base User class to represent users of the system.
 class User:
     def __init__(self, username):
         self.username = username
 
+# Customer class inheriting from User, with additional functionality.
 class Customer(User):
+    # Method for a customer to search for books by title.
     def search_book(self, bookshelf):
         title_fragment = input("Enter the title of the book you're searching for: ")
-        found_books = bookshelf.find_book(title_fragment) # Assuming this returns a list
-        
-        if found_books:  # Check if the list is not empty
+        found_books = bookshelf.find_book(title_fragment)
+        if found_books:
             print("\nFound book(s):")
             for book in found_books:
                 print(book)
                 print("\n")
-            print(f"Total books found: {len(found_books)}") # Print the count of found books
+            print(f"Total books found: {len(found_books)}")
         else:
             print("No books found matching your query.")
 
+# Admin class inheriting from Customer, with administrative capabilities.
 class Admin(Customer):
+    # Method to add a new admin user.
     def add_admin(self, username, password):
         if username in users:
             print("Username already exists.")
@@ -134,6 +147,7 @@ class Admin(Customer):
         users[username] = {'password': password, 'role': 'Admin'}
         print(f"Admin account created for {username}.")
         
+    # Method for an admin to update the shelf of a book.
     def update_book_shelf(self, bookshelf):
         title = input("Enter the title of the book to update its shelf: ")
         new_shelf = input("Enter the new shelf: ")
@@ -142,75 +156,71 @@ class Admin(Customer):
         else:
             print(f"Failed to update the shelf. The book '{title}' may not exist.")
 
+    # Method for an admin to add a new book to the bookshelf.
     def add_book(self, bookshelf):
+        # Gather book details from the admin.
         current_year = datetime.now().year
         title = input("Enter the title of the book: ")
         authors = input("Enter the authors of the book: ")
         original_language = input("Enter the original language of the book: ")
-        
-        # Using a while loop to keep prompting for input until it's valid
+        # Validate and convert input where necessary.
         while True:
             try:
                 first_published = int(input("Enter the year the book was first published: "))
                 if 0 <= first_published <= current_year:
-                    break  # The year is valid
+                    break
                 else:
                     print("The year must be a positive number and less than or equal to the current year.")
             except ValueError:
                 print("Invalid input for the year. Please enter a valid integer.")
-       
         while True:
             try:
                 sales_millions = float(input("Enter the approximate sales in millions: "))
-                if sales_millions >=0 :
-                    break  # Break the loop if the input is valid
+                if sales_millions >= 0:
+                    break
                 else:
                     print("The sales data must be positive")
             except ValueError:
                 print("Invalid input for sales. Please enter a valid number.")
-        
         genre = input("Enter the genre of the book: ")
         shelves = input("Enter the shelf for the book: ")
-        
         while True:
             try:
                 number_of_books = int(input("Enter the number of copies: "))
                 if number_of_books >= 0:
-                    break  # Break the loop if the input is valid
+                    break
                 else:
                     print("The number of books must be positive")
             except ValueError:
                 print("Invalid input for the number of copies. Please enter a valid integer.")
-        
         while True:
             try:
                 price = float(input("Enter the price of the book: "))
                 if price >= 0:
-                    break  # Break the loop if the input is valid
+                    break
                 else:
                     print("The price of book must be positive")
             except ValueError:
                 print("Invalid input for the price. Please enter a valid number.")
-        
+        # Create a new Book object and add it to the bookshelf.
         new_book = Book(title, authors, original_language, first_published, sales_millions, genre, shelves, number_of_books, price)
         bookshelf.books.append(new_book)
         print(f"\nBook '{title}' has been added to the bookshelf.\n")
 
+# Global dictionary to store user information. 
 users = {
     'admin1': {'password': 'adminpass', 'role': 'Admin'},
     'cust1': {'password': 'custpass', 'role': 'Customer'},
 }
 
+# Function to authenticate users based on username and password.
 def authenticate():
-    while True:  # Loop indefinitely until successful authentication
+    while True:
         username = input("Enter username: ")
         password = input("Enter password: ")
-
-        # Check if the username exists
         if username not in users:
             print("The username does not exist. Please try again.")
         else:
-            # Username exists, now check password
             if password == users[username]['password']:
                 role = users[username]['role']
                 print(f"Welcome {username}! You are logged in as a {role}.")
@@ -219,22 +229,20 @@ def authenticate():
                 else:
                     return Customer(username)
             else:
-                # Password is incorrect
                 print("The password is incorrect. Please try again.")
 
+# Main function to drive the application.
 def main():
-    while True:  # Loop to keep the application running
-        user = authenticate()  # Authenticate a user
-        if not user:  # If authentication fails or returns None, break the loop
+    while True:
+        user = authenticate()  # Authenticate a user.
+        if not user:
             print("Authentication failed. Exiting the application.")
             break
-
         bookshelf = Bookshelf()
-        # Load data from CSV
-        bookshelf.load_from_csv('best-selling-books.csv')
-
-        while True:  # Inner loop for user operations
+        bookshelf.load_from_csv('best-selling-books.csv')  # Load book data.
+        while True:
             if isinstance(user, Admin):
+                # Display admin-specific options.
                 print("\n1. Add Admin\n2. Search Book\n3. Add Book\n4. Change Book Shelf\n5. Show Inventory Summary\n6. Log Off")
                 choice = input("Select an option: ")
                 if choice == '1':
@@ -253,30 +261,27 @@ def main():
                     bookshelf.inventory_summary()
                 elif choice == '6':
                     print("Logging off. You may log in with another account.")
-                    break  # Break to log off and possibly re-login
+                    break
                 else:
-                    print(f"{choice} is Invalid Option!! Please enter the valid option")
+                    print(f"{choice} is an invalid option! Please enter a valid option.")
             elif isinstance(user, Customer):
+                # Display customer-specific options.
                 print("\n1. Search Book\n2. Log Off")
                 choice = input("Select an option: ")
                 if choice == '1':
                     user.search_book(bookshelf)
                 elif choice == '2':
                     print("Logging off. You may log in with another account.")
-                    break  # Break to log off and possibly re-login
+                    break
             else:
                 print("Invalid role. Exiting...")
-                break  # In case of invalid user role
-        
-        # Ask if the user wants to exit the application or log in again
-        exit_choice = input("Do you want to exit the application? \n (Type 'yes' to exit or press any other key to return to the login): ")
+                break
+        exit_choice = input("Do you want to exit the application? \n(Type 'yes' to exit or press any other key to return to the login): ")
         if exit_choice.lower() == 'yes':
             print("Exiting the application. Goodbye!")
-            break  # Assuming this is within a loop, it will exit the application
+            break
         else:
             print("Returning back to the login...")
 
-
 if __name__ == "__main__":
     main()
-
