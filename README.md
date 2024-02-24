@@ -1,77 +1,82 @@
+
 # Bookstore Management System
 
-This bookstore management system is a Python-based application that allows users to manage a collection of books. With features like adding, searching, and updating book information, it is suitable for small libraries or personal collections.
+The Bookstore Management System is a versatile Python-based application designed to help users efficiently manage a collection of books. Ideal for small libraries or personal collections, it incorporates a range of functionalities such as book addition, search, and shelf location updates, alongside role-based access for admins and customers.
 
-original input data source: https://www.kaggle.com/code/drahulsingh/best-selling-books-notebook/input
+**Original Input Data Source:** [Kaggle Notebook - Best Selling Books](https://www.kaggle.com/code/drahulsingh/best-selling-books-notebook/input)
 
-## 1. Features
+## Features Overview
 
-- Load books from a CSV file
-- Search for books by title
-- Add new books to the inventory
-- Update the shelf location of books
-- Admin and customer role management
-- Inventory summary with total book count and price per shelf
+- **Load Books:** Import book details from a CSV file into the system.
+- **Book Search:** Find books within the inventory by title.
+- **Inventory Management:** Add new books to the system and update existing book information.
+- **Shelf Management:** Adjust the shelf locations of books as needed.
+- **Role-Based Access:** Separate access controls for admin and customer roles.
+- **Inventory Summary:** Generate summaries of book counts and total prices, organized by shelf.
 
-## 2. Getting Started
+## Getting Started
 
-Follow these instructions to get your Book Management System up and running.
+To set up the Book Management System on your machine, follow the steps outlined below.
 
-## 3. Prerequisites
+## Prerequisites
 
-You need to have Python 3.x installed on your system to run this application. Python can be downloaded from the [official website](https://www.python.org/downloads/).
+Ensure Python 3.x and pandas 1.2.4 are installed on your system:
 
-You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
+- **Python 3.x:** Download from the [official Python website](https://www.python.org/downloads/).
+- **Pandas 1.2.4:** Install via pip (`pip install pandas`) or conda for Anaconda environments (`conda install pandas`). Visit [pandas' official site](https://pandas.pydata.org/) for more details.
 
-### 3.1 Verify Current Interpreter
+### Setting Up Your Environment
 
-First, ensure you know which Python interpreter you're using when the error occurs. In IDEs like PyCharm, VSCode, or Jupyter notebooks, the interpreter or kernel can usually be selected or changed from the interface. **Check the interpreter path to confirm whether it points to the expected environment where pandas is installed.**
+#### Verify Python Interpreter
 
-### 3.2 Ensure Pandas is Installed in the Active Environment(you can skip this once you are sure of the above step)
+- **Check Interpreter Path:** In your IDE (e.g., PyCharm, VSCode), confirm the interpreter path points to the environment where pandas is installed.
 
-For standard environments (venv/virtualenv):
-Activate the environment and use pip to install pandas:
+#### Install Pandas
 
-    source /path/to/env/bin/activate  # On Windows, use `\path\to\env\Scripts\activate`
-    pip install pandas
-    
-For Anaconda environments:
-Activate the conda environment and use conda to install pandas:
+- **Standard Python Environment:**
+  ```bash
+  source /path/to/env/bin/activate  # Use \path\to\env\Scripts\activate on Windows
+  pip install pandas
+  ```
 
-    conda activate myenv
-    conda install pandas
+- **Anaconda Environment:**
+  ```bash
+  conda activate myenv
+  conda install pandas
+  ```
 
+## Running the Application
 
-## 4. Simple Execution
+Ensure you have downloaded and saved both `best-selling-books.csv` and `main.py` in the same directory.
 
-download both file:
+### Initial Setup
 
-**Ensure to save both files under the same folder**
+- **Start the Application:** Run `main.py` in your terminal or command prompt. You will be prompted to log in using a username and password.
 
-    best-selling-books.csv
-    main.py
-    
-### 4.1 Run the application and you will be prompted to enter the username and password
+### Authentication Details
 
-For test authentications, each username and password are as follows
+- **Admin Access:**
+  - Username: `admin1`
+  - Password: `adminpass`
 
-### admin username and password:
-    admin1
-    adminpass
+- **Customer Access:**
+  - Username: `cust1`
+  - Password: `custpass`
 
-### customer username and password:
-    cust1
-    custpass
+### User Options
 
-### Once you log in as **admin** you are prompted you select the following options:
-    1. Add Admin
-    2. Search Book
-    3. Add Book
-    4. Change Book Shelf
-    5. Show Inventory Summary
-    6. Log Off
-    
-### Once you log in as **customer** you are prompted you select the following options:
-    1. Search Book
-    2. Log Off
+#### Admin Options
+Once logged in as an **admin**, you will have the following options:
+1. Add Admin
+2. Search Book
+3. Add Book
+4. Change Book Shelf
+5. Show Inventory Summary
+6. Log Off
 
+#### Customer Options
+As a **customer**, you can:
+1. Search Book
+2. Log Off
+
+Follow the on-screen prompts to navigate through the application.
