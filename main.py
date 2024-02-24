@@ -1,8 +1,4 @@
-try:
-    import pandas as pd
-except ImportError:
-    raise ImportError("This script requires the pandas library. Install it using 'pip install pandas'")
-
+import pandas as pd
 from datetime import datetime
 
 # Define the Book class to represent individual books with relevant attributes.
