@@ -4,7 +4,7 @@ This bookstore management system is a Python-based application that allows users
 
 original input data source: https://www.kaggle.com/code/drahulsingh/best-selling-books-notebook/input
 
-## Features
+## 1. Features
 
 - Load books from a CSV file
 - Search for books by title
@@ -13,21 +13,22 @@ original input data source: https://www.kaggle.com/code/drahulsingh/best-selling
 - Admin and customer role management
 - Inventory summary with total book count and price per shelf
 
-## Getting Started
+## 2. Getting Started
 
 Follow these instructions to get your Book Management System up and running.
 
-## Prerequisites
+## 3. Prerequisites
 
 You need to have Python 3.x installed on your system to run this application. Python can be downloaded from the [official website](https://www.python.org/downloads/).
 
 You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
 
-### 1. Verify Current Interpreter
+### 3.1 Verify Current Interpreter
 
 First, ensure you know which Python interpreter you're using when the error occurs. In IDEs like PyCharm, VSCode, or Jupyter notebooks, the interpreter or kernel can usually be selected or changed from the interface. **Check the interpreter path to confirm whether it points to the expected environment where pandas is installed.**
 
-### 2. Ensure Pandas is Installed in the Active Environment(you can skip this once you are sure of the above step)
+### 3.2 Ensure Pandas is Installed in the Active Environment(you can skip this once you are sure of the above step)
+
 For standard environments (venv/virtualenv):
 Activate the environment and use pip to install pandas:
 
@@ -41,14 +42,15 @@ Activate the conda environment and use conda to install pandas:
     conda install pandas
 
 
-## Simple Execution
+## 4. Simple Execution
+
 download both file:
 **Ensure to save both files under the same folder**
 
     best-selling-books.csv
     main.py
     
-### Run the application and you will be prompted to enter username and password
+### 4.1 Run the application and you will be prompted to enter the username and password
 
 For test authentications, each username and password are as follows
 
