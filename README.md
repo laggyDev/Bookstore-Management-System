@@ -17,24 +17,59 @@ original input data source: https://www.kaggle.com/code/drahulsingh/best-selling
 
 Follow these instructions to get your Book Management System up and running.
 
-### Prerequisites
+## Prerequisites
 
 You need to have Python 3.x installed on your system to run this application. Python can be downloaded from the [official website](https://www.python.org/downloads/).
 
 You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
 
-### Simple Execution
-download "best-selling-books.csv" and main.py file
+### 1. Verify Current Interpreter
+
+First, ensure you know which Python interpreter you're using when the error occurs. In IDEs like PyCharm, VSCode, or Jupyter notebooks, the interpreter or kernel can usually be selected or changed from the interface. **Check the interpreter path to confirm whether it points to the expected environment where pandas is installed.**
+
+### 2. Ensure Pandas is Installed in the Active Environment(you can skip this once you are sure of the above step)
+For standard environments (venv/virtualenv):
+Activate the environment and use pip to install pandas:
+
+    source /path/to/env/bin/activate  # On Windows, use `\path\to\env\Scripts\activate`
+    pip install pandas
+    
+For Anaconda environments:
+Activate the conda environment and use conda to install pandas:
+
+    conda activate myenv
+    conda install pandas
+
+
+## Simple Execution
+download file:
+
+    best-selling-books.csv
+    main.py
+    
+**Ensure to save both files under the same folder**
+
 execute the script and follow the prompt:
 
 For test authentications, each username and password are as follows
 
-#### admin username and password:
+### admin username and password:
     admin1
     adminpass
 
-#### customer username and password:
+### customer username and password:
     cust1
     custpass
 
+### Once you log in as **admin** you are prompted you select the following options:
+    1. Add Admin
+    2. Search Book
+    3. Add Book
+    4. Change Book Shelf
+    5. Show Inventory Summary
+    6. Log Off
+    
+### Once you log in as **customer** you are prompted you select the following options:
+    1. Search Book
+    2. Log Off
 
