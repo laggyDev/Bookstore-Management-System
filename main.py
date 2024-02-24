@@ -274,13 +274,10 @@ def main():
                 break  # In case of invalid user role
         
         # Ask if the user wants to exit the application or log in again
-        exit_choice = input("Do you want to exit the application? \n (Type 'yes' to exit or press any other key to return to the login): ")
+        exit_choice = input("Do you want to exit the application? (yes/no): ")
         if exit_choice.lower() == 'yes':
             print("Exiting the application. Goodbye!")
-            break  # Assuming this is within a loop, it will exit the application
-        else:
-            print("Returning back to the login...")
-
+            break  # Break the outer loop to exit the application
 
 if __name__ == "__main__":
     main()
