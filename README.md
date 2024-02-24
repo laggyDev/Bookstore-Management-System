@@ -35,8 +35,8 @@ For test authentications, each username and password are as follows
     adminpass
 
 #### customer username:
-    customer1
+    cust1
 #### customer password:
-    custpass1
+    custpass
 
 
