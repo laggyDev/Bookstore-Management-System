@@ -206,7 +206,7 @@ class Admin(Customer):
 # Global dictionary to store user information. 
 users = {
     'admin1': {'password': 'adminpass', 'role': 'Admin'},
-    'customer1': {'password': 'custpass1', 'role': 'Customer'},
+    'cust1': {'password': 'custpass', 'role': 'Customer'},
 }
 
 # Function to authenticate users based on username and password.
@@ -274,10 +274,12 @@ def main():
                 break  # In case of invalid user role
         
         # Ask if the user wants to exit the application or log in again
-        exit_choice = input("Do you wwant to exit the application? (yes/no): ")
+        exit_choice = input("Do you want to exit the application? \n 'yes' to exit or press anything to go back to log in: ")
         if exit_choice.lower() == 'yes':
             print("Exiting the application. Goodbye!")
-            break  # Break the outer loop to exit the application
+            break  # Assuming this is within a loop, it will exit the application
+        else:
+            print("Returning back to the login...")
 
 if __name__ == "__main__":
     main()
