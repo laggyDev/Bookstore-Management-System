@@ -29,14 +29,12 @@ execute the script and follow the prompt:
 
 For test authentications, each username and password are as follows
 
-#### admin username:
+#### admin username and password:
     admin1
-#### admin password:
     adminpass
 
-#### customer username:
+#### customer username and password:
     cust1
-#### customer password:
     custpass
 
 
