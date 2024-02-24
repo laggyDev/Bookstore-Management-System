@@ -63,9 +63,10 @@ Ensure you have downloaded and saved both `best-selling-books.csv` and `main.py`
   - Username: `cust1`
   - Password: `custpass`
 
-### User Options
+## User Options
 
-#### Admin Options
+### Admin Options
+
 Once logged in as an **admin**, you will have the following options:
 1. Add Admin
 2. Search Book
@@ -74,7 +75,8 @@ Once logged in as an **admin**, you will have the following options:
 5. Show Inventory Summary
 6. Log Off
 
-#### Customer Options
+### Customer Options
+
 As a **customer**, you can:
 1. Search Book
 2. Log Off
