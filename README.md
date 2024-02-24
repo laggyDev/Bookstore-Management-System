@@ -25,7 +25,7 @@ You need to have pandas 1.2.4 installed on your system to run this application. 
 
 ### 1. Verify Current Interpreter
 
-First, ensure you know which Python interpreter you're using when the error occurs. In IDEs like PyCharm, VSCode, or Jupyter notebooks, the interpreter or kernel can usually be selected or changed from the interface. Check the interpreter path to confirm whether it points to the expected environment where pandas is installed.
+First, ensure you know which Python interpreter you're using when the error occurs. In IDEs like PyCharm, VSCode, or Jupyter notebooks, the interpreter or kernel can usually be selected or changed from the interface. **Check the interpreter path to confirm whether it points to the expected environment where pandas is installed.**
 
 ### 2. Ensure Pandas is Installed in the Active Environment
 For standard environments (venv/virtualenv):
