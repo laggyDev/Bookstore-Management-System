@@ -21,20 +21,20 @@ Follow these instructions to get your Book Management System up and running.
 
 You need to have Python 3.x installed on your system to run this application. Python can be downloaded from the [official website](https://www.python.org/downloads/).
 
+You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
+
 ### Simple Execution
 download "best-selling-books.csv" and main.py file
 execute the script and follow the prompt:
 
 For test authentications, each username and password are as follows
 
-#### admin username:
+#### admin username and password:
     admin1
-#### admin password:
     adminpass
 
-#### customer username:
-    customer1
-#### customer password:
-    custpass1
+#### customer username and password:
+    cust1
+    custpass
 
 
