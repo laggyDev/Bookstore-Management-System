@@ -48,6 +48,7 @@ download file:
     main.py
     
 **Ensure to save both files under the same folder**
+
 execute the script and follow the prompt:
 
 For test authentications, each username and password are as follows
@@ -60,10 +61,15 @@ For test authentications, each username and password are as follows
     cust1
     custpass
 
-Once you log in as either 
-1. Add Admin
-2. Search Book
-3. Add Book
-4. Change Book Shelf
-5. Show Inventory Summary
-6. Log Off
+### Once you log in as **admin** you are prompted you select the following options:
+    1. Add Admin
+    2. Search Book
+    3. Add Book
+    4. Change Book Shelf
+    5. Show Inventory Summary
+    6. Log Off
+    
+### Once you log in as **customer** you are prompted you select the following options:
+    1. Search Book
+    2. Log Off
+
