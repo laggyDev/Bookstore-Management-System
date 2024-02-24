@@ -20,7 +20,7 @@ To set up the Book Management System on your machine, follow the steps outlined 
 
 ## Prerequisites
 
-Ensure Python 3.x and pandas 1.2.4 are installed on your system:
+Ensure Python 3.x and pandas 1.5.3 are installed on your system:
 
 - **Python 3.x:** Download from the [official Python website](https://www.python.org/downloads/).
 - **Pandas 1.2.4:** Install via pip (`pip install pandas`) or conda for Anaconda environments (`conda install pandas`). Visit [pandas' official site](https://pandas.pydata.org/) for more details.
