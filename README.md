@@ -20,7 +20,8 @@ Follow these instructions to get your Book Management System up and running.
 ### Prerequisites
 
 You need to have Python 3.x installed on your system to run this application. Python can be downloaded from the [official website](https://www.python.org/downloads/).
-You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from the https://pandas.pydata.org/
+
+You need to have pandas 1.2.4 installed on your system to run this application. pandas can be installed from https://pandas.pydata.org/
 
 ### Simple Execution
 download "best-selling-books.csv" and main.py file
