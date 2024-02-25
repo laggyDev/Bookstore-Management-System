@@ -5,7 +5,7 @@ The Bookstore Management System is a versatile Python-based application designed
 
 **Original Input Data Source:** [Kaggle Notebook - Best Selling Books](https://www.kaggle.com/code/drahulsingh/best-selling-books-notebook/input)
 
-**Video Presentation & Documents:** https://drive.google.com/drive/folders/1M9GRTupvYxAnrQ6GpXubpwe2o7w-9il9?usp=sharing
+**Video Presentation:** https://drive.google.com/file/d/1ygnK6FiZCUdJlkIqm6S-NKV4ooerdqVi/view?usp=drive_link
 
 ## Features Overview
 
