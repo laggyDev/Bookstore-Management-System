@@ -9,7 +9,7 @@ The Bookstore Management System is a versatile Python-based application designed
 
 **Video Presentation Youtube link:** 
 
-**test-use cases:** test_cases_documentation.md
+**test-use cases:** [test_cases_documentation.md](https://github.com/laggyDev/Bookstore-Management-System/blob/236ffa6defae1d470495fee81d39488c34b2da33/test_cases_documentation.md)
 
 ## Features Overview
 
