@@ -5,6 +5,8 @@ The Bookstore Management System is a versatile Python-based application designed
 
 **Original Input Data Source:** [Kaggle Notebook - Best Selling Books](https://www.kaggle.com/code/drahulsingh/best-selling-books-notebook/input)
 
+**Video Presentation:** https://drive.google.com/file/d/1ygnK6FiZCUdJlkIqm6S-NKV4ooerdqVi/view?usp=drive_link
+
 ## Features Overview
 
 - **Load Books:** Import book details from a CSV file into the system.
@@ -20,10 +22,10 @@ To set up the Book Management System on your machine, follow the steps outlined 
 
 ## Prerequisites
 
-Ensure Python 3.x and pandas 1.2.4 are installed on your system:
+Ensure Python 3.x and pandas 1.5.3 are installed on your system:
 
 - **Python 3.x:** Download from the [official Python website](https://www.python.org/downloads/).
-- **Pandas 1.2.4:** Install via pip (`pip install pandas`) or conda for Anaconda environments (`conda install pandas`). Visit [pandas' official site](https://pandas.pydata.org/) for more details.
+- **Pandas 1.5.3:** Install via pip (`pip install pandas`) or conda for Anaconda environments (`conda install pandas`). Visit [pandas' official site](https://pandas.pydata.org/) for more details.
 
 ### Setting Up Your Environment
 
@@ -51,7 +53,7 @@ Ensure you have downloaded and saved both `best-selling-books.csv` and `main.py`
 
 ### Initial Setup
 
-- **Start the Application:** Run `main.py` in your terminal or command prompt. You will be prompted to log in using a username and password.
+- **Start the Application:** Run `main.py` in your terminal, IDEs, or command prompt. You will be prompted to log in using a username and password.
 
 ### Authentication Details
 
@@ -63,9 +65,10 @@ Ensure you have downloaded and saved both `best-selling-books.csv` and `main.py`
   - Username: `cust1`
   - Password: `custpass`
 
-### User Options
+## User Options
 
-#### Admin Options
+### Admin Options
+
 Once logged in as an **admin**, you will have the following options:
 1. Add Admin
 2. Search Book
@@ -74,7 +77,8 @@ Once logged in as an **admin**, you will have the following options:
 5. Show Inventory Summary
 6. Log Off
 
-#### Customer Options
+### Customer Options
+
 As a **customer**, you can:
 1. Search Book
 2. Log Off

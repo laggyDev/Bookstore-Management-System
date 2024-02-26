@@ -24,7 +24,6 @@ This document outlines additional test cases for the Python book management appl
 ## Admin Class Tests
 
 - **Add New Book with Valid and Invalid Data:** Test adding books with various data to validate input handling.
-- **Update Shelf with Valid and Invalid Shelf Names:** Test shelf updates with both valid and invalid names to ensure correct handling.
 - **Add Admin with Existing Username:** Attempt to add a new admin with a duplicate username to test uniqueness validation.
 
 ## General System Tests
