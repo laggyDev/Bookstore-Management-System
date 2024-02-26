@@ -3,6 +3,8 @@
 
 The Bookstore Management System is a versatile Python-based application designed to help users efficiently manage a collection of books. Ideal for small libraries or personal collections, it incorporates a range of functionalities such as book addition, search, and shelf location updates, alongside role-based access for admins and customers.
 
+## Documents
+
 **Original Input Data Source:** [Kaggle Notebook - Best Selling Books](https://www.kaggle.com/code/drahulsingh/best-selling-books-notebook/input)
 
 **Project Report:** https://github.com/laggyDev/Bookstore-Management-System/blob/236ffa6defae1d470495fee81d39488c34b2da33/ENGM4620%20-%20Project1%20-%20Bookstore%20Management%20System.pdf
